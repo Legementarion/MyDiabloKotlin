@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "151570572098",
+    "firebase_url": "https://my-diablo-2736c.firebaseio.com",
+    "project_id": "my-diablo-2736c",
+    "storage_bucket": "my-diablo-2736c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:151570572098:android:6fe6cb5e92a75483",
+        "android_client_info": {
+          "package_name": "com.lego.mydiablo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "151570572098-gpkkfop2m5i3bt23hmhmh3k0hlrktlv0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lego.mydiablo",
+            "certificate_hash": "21b9f68f012a111825c1329afa26694e68e2cee9"
+          }
+        },
+        {
+          "client_id": "151570572098-m35hgc0n2o0bj42shvnpf2cqto1etrsv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDV4FaKgzPWcnZ3jgsffLodFJFB5vVBLoo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "151570572098-m35hgc0n2o0bj42shvnpf2cqto1etrsv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
