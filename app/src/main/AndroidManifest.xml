@@ -18,9 +18,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="626d904b52d641a59e201ba4bdf74974e53fbb18" />
+
+        <activity android:name=".view.activities.MainActivity" />
+        <activity android:name=".view.activities.AuthorizationActivity"></activity>
     </application>
 
 </manifest>
