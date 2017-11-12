@@ -1,22 +1,28 @@
 package com.lego.mydiablo.logic.rest
 
-import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import retrofit2.converter.gson.GsonConverterFactory
+import com.lego.mydiablo.logic.rest.models.UserTag
+import com.lego.mydiablo.logic.rest.models.auth.AccessToken
+import com.lego.mydiablo.logic.rest.models.auth.CheckedToken
+import retrofit2.http.*
 
 interface AutorizationApi {
 
-    // TODO write  query here
+    @FormUrlEncoded
+    @POST("/oauth/token")
+    fun obtainAccessToken(
+            @Field("grant_type") grantType: String,
+            @Field("code") code: String,
+            @Field("redirect_uri") redirectUri: String,
+            @Field("scope") scope: String): AccessToken
 
-    companion object Factory {
-        fun create(): AutorizationApi {
-            val retrofit = Retrofit.Builder()
-                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .baseUrl("https://api.github.com/")
-                    .build()
+    @FormUrlEncoded
+    @POST("/oauth/check_token")
+    fun checkToken(
+            @Field("token") token: String): CheckedToken
 
-            return retrofit.create(AutorizationApi::class.java)
-        }
-    }
+    @GET
+    fun getTag(
+            @Url url: String,
+            @Query("access_token") token : String
+    ): UserTag
 }
