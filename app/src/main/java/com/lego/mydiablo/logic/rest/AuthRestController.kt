@@ -17,16 +17,16 @@ class AuthRestController {
 
         val okClient = OkHttpClient.Builder()
                 .addInterceptor { chain ->
-                    var original: Request = chain.request()
+                    val original: Request = chain.request()
 
-                    var requestBuilder = original.newBuilder()
+                    val requestBuilder = original.newBuilder()
                             .header("Autorization", "Basic"
-                                    + Base64.encodeToString("", Base64.NO_WRAP))
+                                    + Base64.encodeToString("".toByteArray(), Base64.NO_WRAP))
                             .method(original.method(), original.body())
-                    var request: Request = requestBuilder.build()
-//                    return chain.proceed(request).request()
+                    val request: Request = requestBuilder.build()
+                    chain.proceed(request)
                 }
-//                .addInterceptor { logInterceptor }        //TODO Fix
+                .addInterceptor(logInterceptor)
                 .build()
 
         val retrofit = Retrofit.Builder()
