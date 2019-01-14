@@ -6,12 +6,12 @@ apply plugin: 'io.fabric'
 apply plugin: 'com.google.firebase.firebase-perf'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion "27.0.1"
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
     defaultConfig {
         applicationId "com.lego.mydiablo"
-        minSdkVersion 19
-        targetSdkVersion 27
+        minSdkVersion 21
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -28,35 +28,35 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     //support
-    implementation 'com.android.support:appcompat-v7:27.0.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "com.android.support:appcompat-v7:$android_support"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    compile 'com.github.bumptech.glide:glide:4.2.0'
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.2.0'
-    compile 'android.arch.persistence.room:runtime:1.0.0'
-    annotationProcessor 'android.arch.persistence.room:compiler:1.0.0'
+    implementation 'android.arch.persistence.room:runtime:1.1.1'
+    annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
 
     //di
-    compile 'com.google.dagger:dagger:2.9'
+    implementation 'com.google.dagger:dagger:2.9'
     kapt 'com.google.dagger:dagger-compiler:2.9'
-    provided 'org.glassfish:javax.annotation:10.0-b28'
+    implementation 'org.glassfish:javax.annotation:10.0-b28'
 
     // retrofit
-    compile 'com.squareup.retrofit2:retrofit:2.3.0'
-    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
-    compile 'com.squareup.retrofit2:converter-jackson:2.3.0'
-    compile 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-jackson:2.3.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
 
     // rxandroid
-    compile "io.reactivex.rxjava2:rxandroid:2.0.1"
+    implementation "io.reactivex.rxjava2:rxandroid:2.1.0"
 
     // firebase analytic
-    compile 'com.google.firebase:firebase-core:11.6.0'
-    compile 'com.google.firebase:firebase-messaging:11.6.0'
-    compile 'com.google.firebase:firebase-perf:11.6.0'
-    compile 'com.google.firebase:firebase-config:11.6.0'
-    compile('com.crashlytics.sdk.android:crashlytics:2.7.0@aar') {
+    implementation 'com.google.firebase:firebase-core:16.0.6'
+    implementation 'com.google.firebase:firebase-messaging:17.3.4'
+    implementation 'com.google.firebase:firebase-perf:16.2.3'
+    implementation 'com.google.firebase:firebase-config:16.1.3'
+    implementation('com.crashlytics.sdk.android:crashlytics:2.7.0@aar') {
         transitive = true
     }
 
