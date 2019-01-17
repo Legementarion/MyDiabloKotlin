@@ -20,6 +20,15 @@ allprojects {
         google()
         jcenter()
     }
+
+    configurations {
+        all {
+            resolutionStrategy {
+                force "android.arch.lifecycle:runtime:1.1.1"
+                force "com.android.support:support-fragment:28.0.0"
+            }
+        }
+    }
 }
 
 task clean(type: Delete) {
