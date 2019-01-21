@@ -12,9 +12,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.yalantis.coreui.interfaces.MessagesBehavior
 
-/**
- * Created by warko.
- */
 abstract class BaseFragment<BINDING : ViewDataBinding>(private val layoutResourceId: Int) : Fragment(), MessagesBehavior {
 
     private val registry: LifecycleRegistry

@@ -29,7 +29,7 @@ fun AppCompatDialogFragment.show(manager: FragmentManager) {
     show(manager, getFragmentTag())
 }
 
-inline fun <reified T : Observable> T.onPropertyChanged(crossinline callback: (T) -> Unit) =
+inline fun <reified T : Observable> T.onPropertyChanged(crossinline callback: (T) -> Unit): Observable.OnPropertyChangedCallback =
 
         object : Observable.OnPropertyChangedCallback() {
 
@@ -39,8 +39,4 @@ inline fun <reified T : Observable> T.onPropertyChanged(crossinline callback: (T
         }
                 .also {
                     addOnPropertyChangedCallback(it)
-                }
-                .let {
-//                    Disposables.fromAction { todo Dispose it in another way
-                        removeOnPropertyChangedCallback(it)
                 }

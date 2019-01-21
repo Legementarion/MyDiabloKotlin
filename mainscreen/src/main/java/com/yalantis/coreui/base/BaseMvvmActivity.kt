@@ -1,6 +1,7 @@
 package com.yalantis.coreui.base
 
 import android.app.ProgressDialog
+import android.databinding.Observable
 import android.databinding.ObservableField
 import android.databinding.ViewDataBinding
 import android.os.Bundle
@@ -17,6 +18,9 @@ abstract class BaseMvvmActivity<BINDING : ViewDataBinding, VIEW_MODEL : BaseView
     protected abstract val viewModel: VIEW_MODEL
 
     private var progressDialog: ProgressDialog? = null
+    private var genericMessageCallback: Observable.OnPropertyChangedCallback? = null
+    private var progressDialogCallback: Observable.OnPropertyChangedCallback? = null
+    private var progressMessageCallback: Observable.OnPropertyChangedCallback? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,22 +32,11 @@ abstract class BaseMvvmActivity<BINDING : ViewDataBinding, VIEW_MODEL : BaseView
 
     private fun setupGenericErrorListener() {
         // todo disposable handle it
-        viewModel.showGenericMessage.onPropertyChanged(showGenericMessage)
+        genericMessageCallback = viewModel.showGenericMessage.onPropertyChanged(showGenericMessage)
 
-        viewModel.showProgressDialog.onPropertyChanged {
-            val show = it.get()
-            when (show) {
-                true -> showProgressDialog()
-                false -> dismissProgressDialog()
-            }
-        }
+        progressDialogCallback = viewModel.showProgressDialog.onPropertyChanged(showProgressDialog)
 
-        viewModel.progressMessage.onPropertyChanged {
-            val messageId = it.get()
-            if (messageId?.isNotEmpty() == true) {
-                dialogChangeMessage(messageId)
-            }
-        }
+        progressMessageCallback = viewModel.progressMessage.onPropertyChanged(progressMessage)
     }
 
     private val showGenericMessage: (ObservableField<String>) -> Unit = {
@@ -52,6 +45,22 @@ abstract class BaseMvvmActivity<BINDING : ViewDataBinding, VIEW_MODEL : BaseView
             showSnackbar(message)
         }
 
+    }
+
+    private val showProgressDialog: (ObservableField<Boolean>) -> Unit = {
+        val show = it.get()
+        when (show) {
+            true -> showProgressDialog()
+            false -> dismissProgressDialog()
+        }
+
+    }
+
+    private val progressMessage: (ObservableField<String>) -> Unit = {
+        val messageId = it.get()
+        if (messageId?.isNotEmpty() == true) {
+            dialogChangeMessage(messageId)
+        }
     }
 
     override fun showSnackbar(message: String) {
@@ -72,4 +81,10 @@ abstract class BaseMvvmActivity<BINDING : ViewDataBinding, VIEW_MODEL : BaseView
         }
     }
 
+    override fun onDestroy() {
+        genericMessageCallback?.let { viewModel.showGenericMessage.removeOnPropertyChangedCallback(it) }
+        progressDialogCallback?.let { viewModel.showProgressDialog.removeOnPropertyChangedCallback(it) }
+        progressMessageCallback?.let { viewModel.progressMessage.removeOnPropertyChangedCallback(it) }
+        super.onDestroy()
+    }
 }

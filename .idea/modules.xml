@@ -3,7 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MyDiabloKotlin.iml" filepath="$PROJECT_DIR$/MyDiabloKotlin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/injector/injector.iml" filepath="$PROJECT_DIR$/injector/injector.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mainscreen/mainscreen.iml" filepath="$PROJECT_DIR$/mainscreen/mainscreen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/network/network.iml" filepath="$PROJECT_DIR$/network/network.iml" />
+      <module fileurl="file://$PROJECT_DIR$/repository/repository.iml" filepath="$PROJECT_DIR$/repository/repository.iml" />
     </modules>
   </component>
 </project>
