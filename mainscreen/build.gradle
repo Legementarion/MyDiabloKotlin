@@ -21,7 +21,18 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    dataBinding {
+        enabled = true
+    }
+}
 
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
+}
+androidExtensions {
+    experimental = true
 }
 
 dependencies {
@@ -30,6 +41,7 @@ dependencies {
     //support
     implementation "com.android.support:appcompat-v7:$android_support"
     implementation "com.android.support:design:$android_support"
+    implementation "com.android.support:support-v4:$android_support"
     implementation "com.android.support:cardview-v7:$android_support"
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 
