@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
 import com.yalantis.coreui.R
+import com.yalantis.coreui.flow.MainActivity
 
 class SplashActivity : AppCompatActivity() {
 

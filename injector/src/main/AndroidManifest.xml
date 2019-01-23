@@ -29,7 +29,7 @@
             android:name="io.fabric.ApiKey"
             android:value="626d904b52d641a59e201ba4bdf74974e53fbb18" />
 
-        <activity android:name="com.yalantis.coreui.activities.MainActivity" />
+        <activity android:name="com.yalantis.coreui.flow.MainActivity" />
         <activity android:name="com.yalantis.coreui.activities.AuthorizationActivity" />
     </application>
 

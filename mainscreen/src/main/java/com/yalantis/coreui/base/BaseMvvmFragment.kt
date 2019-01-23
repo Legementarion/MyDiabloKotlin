@@ -12,9 +12,10 @@ import com.yalantis.coreui.utils.onPropertyChanged
 /**
  * @BaseMvvmFragment actually stands for showing messages and progress, also holds ViewModel reference.
  */
-abstract class BaseMvvmFragment<BINDING : ViewDataBinding, VIEW_MODEL : BaseViewModel>(layoutResourceId: Int,
-                                                                                       protected val viewModel: VIEW_MODEL) :
+abstract class BaseMvvmFragment<BINDING : ViewDataBinding, VIEW_MODEL : BaseViewModel>(layoutResourceId: Int) :
         BaseFragment<BINDING>(layoutResourceId) {
+
+    protected abstract val viewModel: VIEW_MODEL
 
     private lateinit var messageInterface: MvvmFragmentMessages
     private var genericMessageCallback: Observable.OnPropertyChangedCallback? = null
