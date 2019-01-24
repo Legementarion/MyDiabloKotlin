@@ -12,7 +12,7 @@ val favoriteModule = module {
 }
 
 val heroListModule = module {
-    viewModel { HeroListViewModel() }
+    viewModel { HeroListViewModel(get()) }
 }
 
 val heroDetailModule = module {

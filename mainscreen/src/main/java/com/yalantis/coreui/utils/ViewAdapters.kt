@@ -9,7 +9,7 @@ import android.widget.ImageView
  * This file stands for listing functions that are needed to bind specific data to a common views
  */
 
-//@BindingAdapter("url")
+//@BindingAdapter("url") //todo link with glide
 //fun loadImage(imageView: ImageView, url: String?) {
 //    Picasso.get()
 //            .load(url)

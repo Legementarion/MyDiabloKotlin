@@ -1,4 +1,4 @@
-package com.lego.mydiablo
+package java.com.lego
 
 import org.junit.After
 import org.junit.Test
