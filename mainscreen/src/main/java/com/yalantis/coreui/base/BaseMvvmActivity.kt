@@ -31,11 +31,8 @@ abstract class BaseMvvmActivity<BINDING : ViewDataBinding, VIEW_MODEL : BaseView
     }
 
     private fun setupGenericErrorListener() {
-        // todo disposable handle it
         genericMessageCallback = viewModel.showGenericMessage.onPropertyChanged(showGenericMessage)
-
         progressDialogCallback = viewModel.showProgressDialog.onPropertyChanged(showProgressDialog)
-
         progressMessageCallback = viewModel.progressMessage.onPropertyChanged(progressMessage)
     }
 
@@ -44,7 +41,6 @@ abstract class BaseMvvmActivity<BINDING : ViewDataBinding, VIEW_MODEL : BaseView
         if (message?.isNotEmpty() == true) {
             showSnackbar(message)
         }
-
     }
 
     private val showProgressDialog: (ObservableField<Boolean>) -> Unit = {
@@ -53,7 +49,6 @@ abstract class BaseMvvmActivity<BINDING : ViewDataBinding, VIEW_MODEL : BaseView
             true -> showProgressDialog()
             false -> dismissProgressDialog()
         }
-
     }
 
     private val progressMessage: (ObservableField<String>) -> Unit = {

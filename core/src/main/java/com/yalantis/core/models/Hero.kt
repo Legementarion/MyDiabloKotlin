@@ -1,5 +1,7 @@
 package com.yalantis.core.models
 
-class Hero {
-
+interface Hero {
+    val name: String
+    val realm: String
+    val heroIcon: String
 }

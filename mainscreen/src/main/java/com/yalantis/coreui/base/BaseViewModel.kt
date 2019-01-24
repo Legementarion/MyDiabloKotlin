@@ -1,6 +1,7 @@
 package com.yalantis.coreui.base
 
 import android.arch.lifecycle.ViewModel
+import android.databinding.ObservableBoolean
 import android.databinding.ObservableField
 
 /**
@@ -14,5 +15,6 @@ abstract class BaseViewModel : ViewModel() {
     val showGenericMessage = ObservableField("")
     val showProgressDialog = ObservableField(false)
     val progressMessage = ObservableField("")
+    val showKeyboard = ObservableBoolean()
 
 }
