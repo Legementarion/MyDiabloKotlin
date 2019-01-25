@@ -1,4 +1,4 @@
-package java.com.lego
+package com.lego
 
 import org.junit.After
 import org.junit.Test
