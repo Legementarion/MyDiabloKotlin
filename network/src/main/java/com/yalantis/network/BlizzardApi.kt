@@ -1,4 +1,4 @@
-package com.yalantis.network.rest
+package com.yalantis.network
 
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory

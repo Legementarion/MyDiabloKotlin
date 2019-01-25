@@ -1,9 +1,11 @@
 package com.yalantis.coreui.di
 
+import com.yalantis.core.usecases.SearchByNameUsecase
 import com.yalantis.coreui.flow.details.HeroDetailViewModel
 import com.yalantis.coreui.flow.favorite.FavoriteViewModel
 import com.yalantis.coreui.flow.search.HeroListViewModel
 import com.yalantis.coreui.flow.top.HeroTopViewModel
+import com.yalantis.coreui.usecase.SearchByNameUsecaseImpl
 import org.koin.android.viewmodel.ext.koin.viewModel
 import org.koin.dsl.module.module
 
@@ -13,6 +15,7 @@ val favoriteModule = module {
 
 val heroListModule = module {
     viewModel { HeroListViewModel(get()) }
+    factory<SearchByNameUsecase> { SearchByNameUsecaseImpl(get()) }
 }
 
 val heroDetailModule = module {

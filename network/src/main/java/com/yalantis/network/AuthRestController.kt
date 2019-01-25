@@ -1,4 +1,4 @@
-package com.yalantis.network.rest
+package com.yalantis.network
 
 import android.util.Base64
 import okhttp3.OkHttpClient

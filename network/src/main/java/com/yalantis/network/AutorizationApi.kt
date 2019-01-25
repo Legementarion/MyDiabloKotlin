@@ -1,4 +1,4 @@
-package com.yalantis.network.rest
+package com.yalantis.network
 
 import com.yalantis.core.models.UserTag
 import com.yalantis.core.models.auth.AccessToken
