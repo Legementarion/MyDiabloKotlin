@@ -9,8 +9,8 @@ interface HeroDAO {
     @Query("select * from heroes")
     fun getAllHero(): List<HeroModel>
 
-    @Query("select * from heroes where id = :p0")
-    fun findHeroById(id: Long): HeroModel
+    @Query("select * from heroes where id = :id")
+    fun findHeroById(id: String): HeroModel
 
     @Insert(onConflict = REPLACE)
     fun insertHero(task: HeroModel)

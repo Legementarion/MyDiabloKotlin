@@ -5,10 +5,13 @@ import android.content.Context
 import com.crashlytics.android.Crashlytics
 import com.lego.mydiablo.di.appModule
 import com.lego.mydiablo.tools.crashreporting.CrashlyticsReportingTree
+import com.lego.mydiablo.utils.Consts.BASE_URL
+import com.lego.mydiablo.utils.Consts.HTTP
 import com.squareup.leakcanary.LeakCanary
 import com.squareup.leakcanary.RefWatcher
 import io.fabric.sdk.android.Fabric
 import net.danlew.android.joda.JodaTimeAndroid
+import org.koin.android.ext.android.setProperty
 import org.koin.android.ext.android.startKoin
 import org.koin.core.Koin
 import org.koin.log.EmptyLogger
@@ -52,6 +55,7 @@ class DiabloApplication : Application() {
     private fun initKoin() {
         startKoin(this, appModule)
         Koin.logger = EmptyLogger()
+        setProperty("blizzard_url", HTTP + "eu" + BASE_URL) //todo change this base url blizz api
     }
 
 }

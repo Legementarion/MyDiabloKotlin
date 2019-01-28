@@ -4,7 +4,7 @@ import com.yalantis.core.datasources.RemoteHeroesDataSource
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 
-class RemoteDataSourceImpl: RemoteHeroesDataSource {
+class RemoteDataSourceImpl(private val blizzardUrl: String): RemoteHeroesDataSource {
 
     val blizzardApi: BlizzardApi
 
@@ -15,7 +15,7 @@ class RemoteDataSourceImpl: RemoteHeroesDataSource {
 //                .create()
 
         val retrofit = Retrofit.Builder()
-//                .baseUrl(redditUrl)
+                .baseUrl(blizzardUrl)
                 .client(OkHttpClient())
 //                .addConverterFactory(JacksonConverterFactory.create(gson))
 //                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())

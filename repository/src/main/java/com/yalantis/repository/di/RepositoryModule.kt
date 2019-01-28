@@ -17,6 +17,6 @@ val repositoryModule: List<Module>
 
 val localModule = module {
     single<HeroesRepository> { HeroesRepositoryImpl(get(), get()) }
-    single { Room.databaseBuilder(get(), HeroDataBase::class.java, DB_NAME).build()}
-    single<LocalHeroesDataSource> { LocalDataSourceImpl(get<HeroDataBase>().heroesDao()) }
+    single<LocalHeroesDataSource> { LocalDataSourceImpl(get()) }
+    single { Room.databaseBuilder(get("context"), HeroDataBase::class.java, DB_NAME).build().heroesDao()}
 }

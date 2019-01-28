@@ -5,7 +5,7 @@ import android.databinding.ObservableField
 import com.yalantis.core.usecases.SearchByNameUsecase
 import com.yalantis.coreui.base.BaseViewModel
 
-class HeroListViewModel(private val searchByNameUsecase: SearchByNameUsecase) : BaseViewModel() {
+class SearchHeroViewModel(private val searchByNameUsecase: SearchByNameUsecase) : BaseViewModel() {
 
     val adapter = ObservableField<SearchAdapter>()
 
@@ -14,6 +14,7 @@ class HeroListViewModel(private val searchByNameUsecase: SearchByNameUsecase) : 
     val isEmpty = ObservableBoolean()
 
     fun onSearchClicked(searchText: String): Boolean {
+        isEmpty.set(true)
         showKeyboard.set(false)
         searchByNameUsecase.searchByName(searchText)
         return true

@@ -7,6 +7,7 @@ import android.databinding.ObservableField
 import android.databinding.ViewDataBinding
 import android.os.Bundle
 import android.view.View
+import com.yalantis.coreui.interfaces.BackButtonListener
 import com.yalantis.coreui.interfaces.MvvmFragmentMessages
 import com.yalantis.coreui.utils.hideKeyboard
 import com.yalantis.coreui.utils.onPropertyChanged
@@ -15,7 +16,8 @@ import com.yalantis.coreui.utils.onPropertyChanged
  * @BaseMvvmFragment actually stands for showing messages and progress, also holds ViewModel reference.
  */
 abstract class BaseMvvmFragment<BINDING : ViewDataBinding, VIEW_MODEL : BaseViewModel>(layoutResourceId: Int) :
-        BaseFragment<BINDING>(layoutResourceId) {
+        BaseFragment<BINDING>(layoutResourceId),
+        BackButtonListener {
 
     protected abstract val viewModel: VIEW_MODEL
 
@@ -43,6 +45,10 @@ abstract class BaseMvvmFragment<BINDING : ViewDataBinding, VIEW_MODEL : BaseView
         progressDialogCallback?.let { viewModel.showProgressDialog.removeOnPropertyChangedCallback(it) }
         progressMessageCallback?.let { viewModel.progressMessage.removeOnPropertyChangedCallback(it) }
         showKeyboardCallback?.let { viewModel.showKeyboard.removeOnPropertyChangedCallback(it) }
+    }
+
+    override fun onBackPressed(): Boolean {
+        TODO("not implemented")
     }
 
     private fun setupGenericErrorListener() {

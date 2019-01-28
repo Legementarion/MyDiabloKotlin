@@ -5,5 +5,5 @@ import com.yalantis.network.RemoteDataSourceImpl
 import org.koin.dsl.module.module
 
 val remoteModule = module {
-    single<RemoteHeroesDataSource> { RemoteDataSourceImpl() }
+    single<RemoteHeroesDataSource> { RemoteDataSourceImpl(getProperty("blizzard_url")) }
 }

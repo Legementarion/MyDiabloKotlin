@@ -9,7 +9,7 @@ import com.yalantis.coreui.R
 import com.yalantis.coreui.base.BindingViewHolder
 import com.yalantis.coreui.databinding.*
 
-class SearchAdapter(private val viewModel: HeroListViewModel,
+class SearchAdapter(private val viewModel: SearchHeroViewModel,
                     private val list: List<Hero>) : RecyclerView.Adapter<SearchAdapter.RepoViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepoViewHolder {
@@ -26,9 +26,9 @@ class SearchAdapter(private val viewModel: HeroListViewModel,
         holder.bind(list[position], viewModel)
     }
 
-    class RepoViewHolder(private val binding: ListItemHeroBinding) : BindingViewHolder<Hero, HeroListViewModel>(binding.root) {
+    class RepoViewHolder(private val binding: ListItemHeroBinding) : BindingViewHolder<Hero, SearchHeroViewModel>(binding.root) {
 
-        override fun bind(item: Hero, viewModel: HeroListViewModel) {
+        override fun bind(item: Hero, viewModel: SearchHeroViewModel) {
             binding.viewModel = item
             binding.executePendingBindings()
         }

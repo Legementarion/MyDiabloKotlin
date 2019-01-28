@@ -9,7 +9,7 @@
 
         <variable
             name="viewModel"
-            type="com.yalantis.coreui.flow.search.HeroListViewModel" />
+            type="com.yalantis.coreui.flow.search.SearchHeroViewModel" />
 
     </data>
 
