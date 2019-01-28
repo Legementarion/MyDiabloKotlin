@@ -1,7 +1,7 @@
 package com.yalantis.coreui.activities
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.yalantis.coreui.R
 
 class AuthorizationActivity : AppCompatActivity() {

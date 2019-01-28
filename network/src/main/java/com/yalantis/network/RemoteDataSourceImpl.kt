@@ -1,23 +1,27 @@
 package com.yalantis.network
 
+import com.google.gson.GsonBuilder
+import com.google.gson.reflect.TypeToken
 import com.yalantis.core.datasources.RemoteHeroesDataSource
+import com.yalantis.core.models.Hero
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class RemoteDataSourceImpl(private val blizzardUrl: String): RemoteHeroesDataSource {
 
-    val blizzardApi: BlizzardApi
+    private val blizzardApi: BlizzardApi
 
     init {
 //        val typeToken = object : TypeToken<Result>() {}.type
-//        val gson = JacksonBuilder()
+        val gson = GsonBuilder()
 //                .registerTypeAdapter(typeToken, GsonDeserializer<Hero>())
-//                .create()
+                .create()
 
         val retrofit = Retrofit.Builder()
                 .baseUrl(blizzardUrl)
                 .client(OkHttpClient())
-//                .addConverterFactory(JacksonConverterFactory.create(gson))
+                .addConverterFactory(GsonConverterFactory.create(gson))
 //                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()
 

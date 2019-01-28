@@ -5,7 +5,7 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.converter.jackson.JacksonConverterFactory
+import retrofit2.converter.gson.GsonConverterFactory
 
 class AuthRestController {
 
@@ -32,7 +32,7 @@ class AuthRestController {
         val retrofit = Retrofit.Builder()
                 .baseUrl("")
                 .client(okClient)
-                .addConverterFactory(JacksonConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
                 .build()
 
         authApi = retrofit.create(AutorizationApi::class.java)

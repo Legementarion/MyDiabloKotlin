@@ -1,7 +1,7 @@
 package com.yalantis.coreui.flow.search
 
-import android.databinding.ObservableBoolean
-import android.databinding.ObservableField
+import androidx.databinding.ObservableBoolean
+import androidx.databinding.ObservableField
 import com.yalantis.core.usecases.SearchByNameUsecase
 import com.yalantis.coreui.base.BaseViewModel
 

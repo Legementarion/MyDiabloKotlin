@@ -1,11 +1,11 @@
 package com.yalantis.coreui.base
 
 import android.app.ProgressDialog
-import android.databinding.Observable
-import android.databinding.ObservableField
-import android.databinding.ViewDataBinding
 import android.os.Bundle
-import android.support.design.widget.Snackbar
+import androidx.databinding.Observable
+import androidx.databinding.ObservableField
+import androidx.databinding.ViewDataBinding
+import com.google.android.material.snackbar.Snackbar
 import com.yalantis.coreui.interfaces.MvvmFragmentMessages
 import com.yalantis.coreui.utils.onPropertyChanged
 

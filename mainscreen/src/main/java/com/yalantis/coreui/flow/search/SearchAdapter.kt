@@ -1,9 +1,9 @@
 package com.yalantis.coreui.flow.search
 
-import android.databinding.DataBindingUtil
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.RecyclerView
 import com.yalantis.core.models.Hero
 import com.yalantis.coreui.R
 import com.yalantis.coreui.base.BindingViewHolder

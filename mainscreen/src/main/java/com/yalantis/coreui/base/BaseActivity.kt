@@ -1,14 +1,14 @@
 package com.yalantis.coreui.base
 
-import android.arch.lifecycle.LifecycleRegistry
-import android.databinding.DataBindingUtil
-import android.databinding.ViewDataBinding
 import android.os.Bundle
-import android.support.annotation.LayoutRes
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import android.view.View
+import androidx.annotation.LayoutRes
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
+import androidx.lifecycle.LifecycleRegistry
 import com.yalantis.coreui.interfaces.MessagesBehavior
 import com.yalantis.coreui.utils.SnackbarBehaviorImpl
 
@@ -18,7 +18,7 @@ import com.yalantis.coreui.utils.SnackbarBehaviorImpl
  */
 abstract class BaseActivity<BINDING : ViewDataBinding>(@LayoutRes
                                                        private val layoutResourceId: Int,
-                                                       private var snackbarBehavior: SnackbarBehaviorImpl = SnackbarBehaviorImpl())
+                                                       private val snackbarBehavior: SnackbarBehaviorImpl = SnackbarBehaviorImpl())
     : AppCompatActivity(), MessagesBehavior by snackbarBehavior {
 
     private val registry: LifecycleRegistry

@@ -1,15 +1,15 @@
 package com.yalantis.coreui.base
 
-import android.arch.lifecycle.LifecycleRegistry
 import android.content.Context
-import android.databinding.DataBindingUtil
-import android.databinding.ViewDataBinding
 import android.os.Bundle
-import android.support.annotation.StringRes
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.StringRes
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.LifecycleRegistry
 import com.yalantis.coreui.interfaces.MessagesBehavior
 
 abstract class BaseFragment<BINDING : ViewDataBinding>(private val layoutResourceId: Int) : Fragment(), MessagesBehavior {
@@ -21,7 +21,7 @@ abstract class BaseFragment<BINDING : ViewDataBinding>(private val layoutResourc
 
     protected lateinit var binding: BINDING
 
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         super.onAttach(context)
         try {
             activityMessagesBehavior = context as MessagesBehavior?

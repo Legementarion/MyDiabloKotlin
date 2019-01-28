@@ -1,10 +1,10 @@
 package com.yalantis.coreui.base
 
 import android.content.Context
-import android.support.annotation.IdRes
-import android.support.annotation.StringRes
-import android.support.v7.widget.RecyclerView
 import android.view.View
+import androidx.annotation.IdRes
+import androidx.annotation.StringRes
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.extensions.LayoutContainer
 
 /**

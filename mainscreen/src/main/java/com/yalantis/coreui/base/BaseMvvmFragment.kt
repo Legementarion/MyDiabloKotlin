@@ -1,12 +1,12 @@
 package com.yalantis.coreui.base
 
 import android.content.Context
-import android.databinding.Observable
-import android.databinding.ObservableBoolean
-import android.databinding.ObservableField
-import android.databinding.ViewDataBinding
 import android.os.Bundle
 import android.view.View
+import androidx.databinding.Observable
+import androidx.databinding.ObservableBoolean
+import androidx.databinding.ObservableField
+import androidx.databinding.ViewDataBinding
 import com.yalantis.coreui.interfaces.BackButtonListener
 import com.yalantis.coreui.interfaces.MvvmFragmentMessages
 import com.yalantis.coreui.utils.hideKeyboard
@@ -27,7 +27,7 @@ abstract class BaseMvvmFragment<BINDING : ViewDataBinding, VIEW_MODEL : BaseView
     private var progressMessageCallback: Observable.OnPropertyChangedCallback? = null
     private var showKeyboardCallback: Observable.OnPropertyChangedCallback? = null
 
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         super.onAttach(context)
         if (context is MvvmFragmentMessages) {
             messageInterface = context

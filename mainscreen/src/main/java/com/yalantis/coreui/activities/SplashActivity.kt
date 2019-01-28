@@ -1,8 +1,8 @@
 package com.yalantis.coreui.activities
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import com.yalantis.coreui.R
 import com.yalantis.coreui.flow.MainActivity
 

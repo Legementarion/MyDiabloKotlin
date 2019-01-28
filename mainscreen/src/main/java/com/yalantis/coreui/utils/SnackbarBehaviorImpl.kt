@@ -1,8 +1,8 @@
 package com.yalantis.coreui.utils
 
 import android.content.Context
-import android.support.design.widget.Snackbar
 import android.view.View
+import com.google.android.material.snackbar.Snackbar
 import com.yalantis.coreui.interfaces.MessagesBehavior
 
 class SnackbarBehaviorImpl: MessagesBehavior {

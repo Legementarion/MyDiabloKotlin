@@ -1,6 +1,6 @@
 package com.yalantis.repository.di
 
-import android.arch.persistence.room.Room
+import androidx.room.Room
 import com.yalantis.core.datasources.LocalHeroesDataSource
 import com.yalantis.core.repositories.HeroesRepository
 import com.yalantis.network.di.remoteModule

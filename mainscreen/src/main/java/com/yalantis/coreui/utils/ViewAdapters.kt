@@ -1,9 +1,8 @@
 package com.yalantis.coreui.utils
 
-import android.databinding.BindingAdapter
-import android.databinding.BindingConversion
 import android.view.View
 import android.widget.ImageView
+import androidx.databinding.BindingConversion
 
 /**
  * This file stands for listing functions that are needed to bind specific data to a common views

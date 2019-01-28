@@ -2,11 +2,11 @@ package com.yalantis.coreui.utils
 
 import android.app.Activity
 import android.content.Context
-import android.databinding.Observable
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v7.app.AppCompatDialogFragment
 import android.view.inputmethod.InputMethodManager
+import androidx.appcompat.app.AppCompatDialogFragment
+import androidx.databinding.Observable
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 
 fun Activity.hideKeyboard() {
     val inputManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager?

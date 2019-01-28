@@ -1,6 +1,6 @@
 package com.yalantis.coreui.interfaces
 
-import android.support.annotation.StringRes
+import androidx.annotation.StringRes
 
 interface MessagesBehavior {
 
