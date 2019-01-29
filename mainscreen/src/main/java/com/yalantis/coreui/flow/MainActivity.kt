@@ -103,5 +103,6 @@ class MainActivity : BaseMvvmActivity<ActivityMainBinding, MainViewModel>(R.layo
         override fun getItem(position: Int) = fragments[position]
         override fun getCount() = fragments.size
         override fun getPageTitle(position: Int): String = tabTitles[position]
+
     }
 }

@@ -4,4 +4,5 @@
     <string name="favorite">Favorite</string>
     <string name="top">Top</string>
     <string name="empty_state">Nothing to show</string>
+    <string name="not_implementer_yet">Not implementer yet</string>
 </resources>
