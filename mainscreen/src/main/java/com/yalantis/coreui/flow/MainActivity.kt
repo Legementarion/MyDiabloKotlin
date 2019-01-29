@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentPagerAdapter
+import androidx.viewpager.widget.ViewPager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.yalantis.coreui.R
 import com.yalantis.coreui.base.BaseMvvmActivity
@@ -59,6 +60,17 @@ class MainActivity : BaseMvvmActivity<ActivityMainBinding, MainViewModel>(R.layo
         tabsAdapter = TabPagerAdapter()
         tabContainer.adapter = tabsAdapter
         tabContainer.currentItem = 0
+        tabContainer.addOnPageChangeListener(object :ViewPager.OnPageChangeListener{
+            override fun onPageScrollStateChanged(state: Int) {
+            }
+
+            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+                bottomNavigation.menu.getItem(position).isChecked = true
+            }
+
+            override fun onPageSelected(position: Int) {
+            }
+        })
         bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         router.showStartScreen()
     }
